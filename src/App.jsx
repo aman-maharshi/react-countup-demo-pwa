@@ -1,12 +1,26 @@
 import { useState } from 'react'
 import { CircleCheck } from 'lucide-react'
 import EnterprisePlanCard from './EnterprisePlan'
+import CountUp from 'react-countup';
 
 const PlanCard = ({ plan }) => (
   <div className={`flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b ${plan.gradient}`}>
     <div className="p-8 sm:p-10">
       <div className='flex items-end gap-2'>
-        <h3 className="text-5xl font-bold tracking-tight">{plan.name === 'Free' ? 'Free' : `$${plan.price}`}</h3>
+        {plan.name === 'Free' ? (
+          <h3 className="text-5xl font-bold tracking-tight">
+            Free
+          </h3>
+        ) : (
+          <h3 className="text-5xl font-bold tracking-tight">
+            <CountUp
+              end={plan.price}
+              duration={1}
+              useEasing={false}
+            />
+          </h3>
+        )}
+
         {plan.name !== 'Free' && (
           <span className="text-base text-gray-600">/ year</span>
         )}
@@ -30,7 +44,7 @@ const PlanCard = ({ plan }) => (
         ))}
       </ul>
     </div>
-  </div>
+  </div >
 )
 
 const App = () => {
