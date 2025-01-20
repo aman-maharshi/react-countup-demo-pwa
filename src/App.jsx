@@ -96,9 +96,11 @@ const App = () => {
         </p>
       </div>
       <div className="grid max-w-md grid-cols-1 gap-8 mt-16 mx-auto lg:max-w-none lg:grid-cols-3">
-        <PlanCard plan={freePlan} />
-        <PlanCard plan={proPlan} />
+        {/* <PlanCard plan={freePlan} />
+        <PlanCard plan={proPlan} /> */}
+        <div></div>
         <EnterprisePlanCard plan={enterprisePlan} />
+        <div></div>
       </div>
     </div>
   )

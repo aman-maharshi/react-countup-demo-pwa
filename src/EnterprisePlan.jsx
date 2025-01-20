@@ -1,11 +1,12 @@
 import { CircleCheck } from 'lucide-react'
+import CountUp from 'react-countup';
 
 const EnterprisePlanCard = ({ plan }) => (
   <div className={`flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b ${plan.gradient}`}>
     <div className="p-8 sm:p-10">
       <div className='flex items-end gap-2'>
         <h3 className="text-5xl font-bold tracking-tight">
-          ${plan.price}
+          $<CountUp end={plan.price} duration={1} useEasing={false} /> 
         </h3>
         <span className="text-base text-gray-600">/ year</span>
       </div>
