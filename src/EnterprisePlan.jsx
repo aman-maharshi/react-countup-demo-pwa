@@ -4,7 +4,9 @@ const EnterprisePlanCard = ({ plan }) => (
   <div className={`flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b ${plan.gradient}`}>
     <div className="p-8 sm:p-10">
       <div className='flex items-end gap-2'>
-        <h3 className="text-5xl font-bold tracking-tight">{plan.name === 'Free' ? 'Free' : `$${plan.price}`}</h3>
+        <h3 className="text-5xl font-bold tracking-tight">
+          ${plan.price}
+        </h3>
         {plan.name !== 'Free' && (
           <span className="text-base text-gray-600">/ year</span>
         )}
