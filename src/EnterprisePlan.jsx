@@ -7,9 +7,7 @@ const EnterprisePlanCard = ({ plan }) => (
         <h3 className="text-5xl font-bold tracking-tight">
           ${plan.price}
         </h3>
-        {plan.name !== 'Free' && (
-          <span className="text-base text-gray-600">/ year</span>
-        )}
+        <span className="text-base text-gray-600">/ year</span>
       </div>
       <p className="mt-6 text-base text-gray-600">
         {plan.description}
